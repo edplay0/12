@@ -1,24 +1,26 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EDPlay</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Trebuchet MS, sans-serif;
             background: url('https://4kwallpapers.com/images/walls/thumbs_3t/733.jpg') no-repeat center center fixed;
             background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
+            margin: 10;
         }
 
         .container {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(180, 235, 255, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
             text-align: center;
         }
 
@@ -27,7 +29,11 @@
         }
 
         h2 {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            margin-bottom: 20px;
         }
 
         .downloads, .copy-text {
@@ -47,7 +53,7 @@
         }
 
         .button:hover {
-            background-color: #0056b3;
+            background-color: #449eff;
         }
 
         textarea {
@@ -63,219 +69,22 @@
         .drag-to-launcher {
             margin-top: 20px;
             font-size: 1.2em;
-            color: #007BFF;
+            color: #449eff;
             cursor: pointer;
         }
 
         .drag-to-launcher:hover {
-            color: #0056b3;
+            color: #449eff;
         }
     </style>
-<style>.--savior-overlay-transform-reset {
-  transform: none !important;
-}
-.--savior-overlay-z-index-top {
-  z-index: 2147483643 !important;
-}
-.--savior-overlay-position-relative {
-  position: relative;
-}
-.--savior-overlay-position-static {
-  position: static !important;
-}
-.--savior-overlay-overflow-hidden {
-  overflow: hidden !important;
-}
-.--savior-overlay-overflow-x-visible {
-  overflow-x: visible !important;
-}
-.--savior-overlay-overflow-y-visible {
-  overflow-y: visible !important;
-}
-.--savior-overlay-z-index-reset {
-  z-index: auto !important;
-}
-.--savior-overlay-display-none {
-  display: none !important;
-}
-.--savior-overlay-clearfix {
-  clear: both;
-}
-.--savior-overlay-reset-filter {
-  filter: none !important;
-  backdrop-filter: none !important;
-}
-.--savior-tooltip-host {
-  z-index: 9999;
-  position: absolute;
-  top: 0;
-}
-/*Override css styles for Twitch.tv*/
-main.--savior-overlay-z-index-reset {
-  z-index: auto !important;
-}
-.modal__backdrop.--savior-overlay-z-index-reset {
-  position: static !important;
-}
-main.--savior-overlay-z-index-top {
-  z-index: auto !important;
-}
-main.--savior-overlay-z-index-top .channel-root__player-container + div,
-main.--savior-overlay-z-index-top .video-player-hosting-ui__container + div {
-  opacity: 0.1;
-}
-/*Dirty hack for facebook big video page e.g: https://www.facebook.com/abc/videos/...*/
-.--savior-backdrop {
-  position: fixed !important;
-  z-index: 2147483642 !important;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw !important;
-  background-color: rgba(0,0,0,0.9);
-}
-.--savior-overlay-twitter-video-player {
-  position: fixed;
-  width: 80%;
-  height: 80%;
-  top: 10%;
-  left: 10%;
-}
-.--savior-overlay-z-index-reset [class*="DivSideNavContainer"],
-.--savior-overlay-z-index-reset [class*="DivHeaderContainer"],
-.--savior-overlay-z-index-reset [class*="DivBottomContainer"],
-.--savior-overlay-z-index-reset [class*="DivCategoryListWrapper"],
-.--savior-overlay-z-index-reset [data-testid="sidebarColumn"],
-.--savior-overlay-z-index-reset header[role="banner"],
-.--savior-overlay-z-index-reset [data-testid="cellInnerDiv"]:not(.--savior-overlay-z-index-reset),
-.--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:first-child,
-.--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:nth-child(3) {
-  z-index: -1 !important;
-}
-.--savior-overlay-z-index-reset [data-testid="cellInnerDiv"] .--savior-backdrop+div {
-  z-index: 2147483643 !important;
-}
-.--savior-overlay-z-index-reset [data-testid="primaryColumn"]>[aria-label="Home timeline"] {
-  z-index: 0 !important;
-}
-.--savior-overlay-z-index-reset#mtLayer,
-.--savior-overlay-z-index-reset.media-layer {
-  z-index: 3000 !important;
-}
-.--savior-overlay-position-relative [class*="SecBar_secBar_"],
-.--savior-overlay-position-relative .woo-box-flex [class*="Frame_top_"] {
-  z-index: 0 !important;
-}
-.--savior-overlay-position-relative .vue-recycle-scroller__item-view:not(.--savior-overlay-z-index-reset),
-.--savior-overlay-position-relative .woo-panel-main[class*="BackTop_main_"],
-.--savior-overlay-position-relative [class*="Main_side_"] {
-  z-index: -1 !important;
-}
-/* Fix conflict css with zingmp3 */
-.zm-video-modal.--savior-overlay-z-index-reset {
-  position: absolute;
-}
-/* Dirty hack for xvideos99 */
-#page #main.--savior-overlay-z-index-reset {
-  z-index: auto !important;
-}
-/* Overlay for ok.ru */
-#vp_w.--savior-overlay-z-index-reset.media-layer.media-layer__video {
-  overflow-y: hidden;
-  z-index: 2147483643 !important;
-}
-/* Fix missing controller for tv.naver.com */
-.--savior-overlay-z-index-top.rmc_controller,
-.--savior-overlay-z-index-top.rmc_setting_intro,
-.--savior-overlay-z-index-top.rmc_highlight,
-.--savior-overlay-z-index-top.rmc_control_settings {
-  z-index: 2147483644 !important;
-}
-/* Dirty hack for douyi.com */
-.swiper-wrapper.--savior-overlay-z-index-reset .swiper-slide:not(.swiper-slide-active),
-.swiper-wrapper.--savior-overlay-transform-reset .swiper-slide:not(.swiper-slide-active) {
-  display: none;
-}
-.videoWrap + div > div {
-  pointer-events: unset;
-}
-/* Dirty hack for fpt.ai */
-.mfp-wrap.--savior-overlay-z-index-top {
-  position: relative;
-}
-.mfp-wrap.--savior-overlay-z-index-top .mfp-close {
-  display: none;
-}
-.mfp-wrap.--savior-overlay-z-index-top .mfp-content {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset + nav {
-  z-index: -1 !important;
-}
-section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset section.--savior-overlay-z-index-reset div.--savior-overlay-z-index-reset ~ div {
-  position: relative;
-}
-.watching-movie #video-player.--savior-overlay-z-index-top {
-  z-index: 2147483644 !important;
-}
-div[class^="tiktok"].--savior-overlay-z-index-reset {
-  z-index: 2147483644 !important;
-}
-.--savior-lightoff-fix section:not(:has([class*="--savior-overlay-"])),
-.--savior-lightoff-fix section.section_video ~ section {
-  z-index: -1;
-  position: relative;
-}
-.--savior-lightoff-fix header,
-.--savior-lightoff-fix footer,
-.--savior-lightoff-fix .top-header,
-.--savior-lightoff-fix .swiper-container,
-.--savior-lightoff-fix #to_top,
-.--savior-lightoff-fix #button-adblock {
-  z-index: -1 !important;
-}
-@-moz-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-o-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-</style></head>
+</head>
 <body>
+
     <div class="container">
         <h1>EDPlay</h1>
-        
+
         <div class="downloads">
-            <h2>Software And Tweaks</h2>
+            <h2>Software</h2>
             <a href="https://www.7-zip.org/a/7z2409-x64.exe" download="file1.txt" class="button">7-Zip</a>
             <a href="https://anydesk.com/en/downloads/thank-you?dv=win_exe" download="file2.txt" class="button">AnyDesk</a>
             <a href="https://www.steamtools.net/res/ev/SteamtoolsSetup.exe" download="file3.txt" class="button">SteamTools</a>
@@ -288,25 +97,28 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
             <a href="https://www.iobit.com/downloadcenter.php?product=iobit-unlocker" download="file10.txt" class="button">IObit Unlocker</a>
             <a href="https://adl.netease.com/d/g/mumu/c/MuMu_Nebula" download="file11.txt" class="button">MuMu Nebula</a>
             <a href="https://us.download.nvidia.com/GFE/GFEClient/3.27.0.112/GeForce_Experience_v3.27.0.112.exe" download="file12.txt" class="button">GeForce Experience</a>
+            </div>
+
+
+        <div class="downloads">
+            <h2>Tweaks</h2>
             <a href="https://raw.githubusercontent.com/edplay0/12/refs/heads/main/Activate" download="file13.txt" class="button">Activate Windows</a>
             <a href="https://raw.githubusercontent.com/edplay0/12/refs/heads/main/OffDefender" download="file14.txt" class="button">OffDefender</a>
             <a href="https://raw.githubusercontent.com/edplay0/12/refs/heads/main/OffFirewall" download="file15.txt" class="button">OffFirewall</a>
             <a href="https://furcate.eu" download="file16.txt" class="button">ManifestLuaGen</a>
             <a href="https://shorturl.at/jyob1" download="file17.txt" class="button">Unlock Full Game Minecraft</a>
-        </div>
+            </div>
 
-       
-
-            <h2>Games Client</h2>
-            <a href="https://cdn.fastly.steamstatic.com/client/installer/SteamSetup.exe" download="file18.txt" class="button">Steam</a>
+        <div class="downloads">
+            <h2>Games Client</h2>  <a href="https://cdn.fastly.steamstatic.com/client/installer/SteamSetup.exe" download="file18.txt" class="button">Steam</a>
             <a href="https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncherInstaller.msi" download="file19.txt" class="button">Epic Games</a>
             <a href="https://download.battle.net/en-us/?product=bnetdesk" download="file20.txt" class="button">Battle.net</a>
             <a href="https://webinstallers.gog-statics.com/download/GOG_Galaxy_2.0.exe" download="file21.txt" class="button">GOG Galaxy</a>
             <a href="https://download-porter.hoyoverse.com/download-porter/2025/01/14/VYTpXlbWo8_1.4.2.199_1_0_hyp_hoyoverse_prod_202501021059_rmFvwOfI.exe?trace_key=HoYoPlay_install_ua_3b30603477a2" download="file22.txt" class="button">HoyoPlay</a>
         </div>
 
-    <script>
-        function copyText() {
+        <script>
+            function copyText() {
             const textToCopy = document.getElementById('text-to-copy');
             textToCopy.select();
             textToCopy.setSelectionRange(0, 99999); // For mobile devices
@@ -337,7 +149,9 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
             event.dataTransfer.dropEffect = 'move';
             alert('Drag started!');
         }
-    </script>
 
+        </script>
 
-</body><en2vi-host class="corom-element" version="3" style="all: initial; position: absolute; top: 0; left: 0; right: 0; height: 0; margin: 0; text-align: left; z-index: 10000000000; pointer-events: none; border: none; display: block"></en2vi-host></html>
+    </div>
+</body>
+</html>
