@@ -1,4 +1,4 @@
-
+Run the following commands in admin cmd:
 
 reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies" /f
 
